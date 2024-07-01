@@ -7,7 +7,7 @@ public class CounterApp {
     private final JLabel label;
 
     public CounterApp() {
-        JFrame frame = new JFrame("Counter App");
+        JFrame frame = new JFrame("Counter App 2");
         JButton button = new JButton("Increment");
         label = new JLabel("Count: 0");
 
