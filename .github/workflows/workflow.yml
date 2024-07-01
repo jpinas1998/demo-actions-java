@@ -21,12 +21,12 @@ jobs:
           java-version: '11'
 
       - name: Compile the code
-        run: javac CounterApp.java
+        run: javac core/src/CounterApp.java
 
       - name: Package the app into a JAR
         run: |
           echo "Main-Class: CounterApp" > manifest.txt
-          jar cvfm CounterApp.jar manifest.txt CounterApp.class
+          jar cvfm CounterApp.jar manifest.txt -C core/src/ CounterApp.class
 
       - name: Upload JAR as artifact
         uses: actions/upload-artifact@v3
