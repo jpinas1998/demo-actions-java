@@ -1,24 +1,19 @@
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class CounterApp {
     private int counter = 0;
-    private JLabel label;
+    private final JLabel label;
 
     public CounterApp() {
         JFrame frame = new JFrame("Counter App");
         JButton button = new JButton("Increment");
         label = new JLabel("Count: 0");
 
-        button.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                counter++;
-                label.setText("Count: " + counter);
-            }
+        button.addActionListener(e -> {
+            counter++;
+            label.setText("Count: " + counter);
         });
 
         frame.setLayout(new java.awt.FlowLayout());
